@@ -18,12 +18,18 @@ export const theme = extendTheme({
             '50': '#F7F8FA',
             '100': '#E5E7EE',
         },
-        dark: '#202226',
+        dark: {
+            'black': '#202226',
+            'grey': '#3A3B3C'
+        },
         yellow:{ 
             'mustard': '#FEDC56',
             'light': '#FEEA7F',
             'dark': '#F9C846',
+            'orange': '#ECB753'
         },
+        
+
     },
     fonts: {
         heading: 'Poppins',
@@ -33,7 +39,6 @@ export const theme = extendTheme({
         global : {
             body: {
                 bg: 'dark',
-                color: 'gray.50',
             }
         }
     }
