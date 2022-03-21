@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.6",
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
     "commitizen": "^4.2.4",
+    "framer-motion": "^6.2.8",
     "git-cz": "^4.8.0",
     "next": "12.1.0",
     "react": "17.0.2",

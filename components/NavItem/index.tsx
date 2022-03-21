@@ -8,7 +8,7 @@ interface NavItemProps extends FlexProps {
   }
 export const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
     return (
-      <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+      <Link  style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
         <Flex
           align="center"
           p="3"
@@ -17,18 +17,16 @@ export const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
           role="group"
           cursor="pointer"
           color="white"
+          bg="transparent"
           _hover={{
-            bg: 'yellow.orange',
-            color: 'white',
+            bg: 'gray.700',
           }}
           {...rest}>
           {icon && (
             <Icon
               mr="4"
               fontSize="14"
-              _groupHover={{
-                color: 'white',
-              }}
+              
               as={icon}
             />
           )}

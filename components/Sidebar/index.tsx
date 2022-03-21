@@ -1,22 +1,24 @@
 import { Box, BoxProps, CloseButton, Flex, Image, Text, useColorModeValue } from "@chakra-ui/react";
 import { IconType } from "react-icons";
-import { FiHome,FiUser, FiPaperclip, FiFileText, FiFilePlus } from "react-icons/fi";
+import { FiHome, FiUser, FiPaperclip, FiFileText, FiFilePlus } from "react-icons/fi";
+import { ActiveLink } from "../ActiveLink";
 import { NavItem } from "../NavItem";
-
-
-const LinkItems: Array<LinkItemProps> = [
-    { name: 'Home', icon: FiHome },
-    { name: 'Artigos', icon: FiPaperclip },
-    { name: 'Documentos', icon: FiFileText },
-    { name: 'Autores', icon: FiUser },
-    { name: 'Relatório', icon: FiFilePlus },
-];
-
 
 interface LinkItemProps {
     name: string;
     icon: IconType;
+    href: string;
 }
+
+const LinkItems: Array<LinkItemProps> = [
+    { name: 'Home', icon: FiHome, href: '/#' },
+    { name: 'Artigos', icon: FiPaperclip, href: '/articles' },
+    { name: 'Documentos', icon: FiFileText, href: '/documents' },
+    { name: 'Autores', icon: FiUser, href: '/authors' },
+    { name: 'Relatório', icon: FiFilePlus, href: '/report' },
+];
+
+
 
 interface SidebarProps extends BoxProps {
     onClose: () => void;
@@ -31,20 +33,21 @@ export const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             w={{ base: 'full', md: 60 }}
             pos="fixed"
             h="full"
-
             {...rest}>
             <Box position="relative" display={"flex"} flexDir="column" h="100%" paddingBlockEnd={"100px"} >
                 <Flex h="20" alignItems="center" mx="8" justifyContent="space-between" marginBlockEnd={"100px"}>
-                    <Text fontSize="2xl" color="white" fontFamily="Poppins" fontWeight="bold">
+                    <Text fontSize="3xl" color="white" fontFamily="Poppins" fontWeight="bold">
                         Datacapes
                     </Text>
                     <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
                 </Flex>
                 <Box>
                     {LinkItems.map((link) => (
-                        <NavItem key={link.name} icon={link.icon} fontSize={"sm"}>
-                            {link.name}
-                        </NavItem>
+                        <ActiveLink key={link.name} href={link.href}>
+                            <NavItem  icon={link.icon} fontSize={"1.15rem"}>
+                                {link.name}
+                            </NavItem>
+                        </ActiveLink>
                     ))}
                 </Box>
                 <Flex justifyContent={"center"} position="absolute" bottom={"3"} left="10" right={"10"}>
