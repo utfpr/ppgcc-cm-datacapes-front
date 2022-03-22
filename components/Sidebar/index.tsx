@@ -11,7 +11,7 @@ interface LinkItemProps {
 }
 
 const LinkItems: Array<LinkItemProps> = [
-    { name: 'Home', icon: FiHome, href: '/#' },
+    { name: 'Home', icon: FiHome, href: '/home' },
     { name: 'Artigos', icon: FiPaperclip, href: '/articles' },
     { name: 'Documentos', icon: FiFileText, href: '/documents' },
     { name: 'Autores', icon: FiUser, href: '/authors' },
@@ -43,7 +43,7 @@ export const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
                 </Flex>
                 <Box>
                     {LinkItems.map((link) => (
-                        <ActiveLink key={link.name} href={link.href}>
+                        <ActiveLink key={link.name} href={link.href} >
                             <NavItem  icon={link.icon} fontSize={"1.15rem"}>
                                 {link.name}
                             </NavItem>

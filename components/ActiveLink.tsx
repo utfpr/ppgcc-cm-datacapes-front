@@ -11,7 +11,7 @@ export function ActiveLink({children, shouldMatchExactHref= false, ...rest}: Act
     const { asPath } = useRouter();
     let isActive = false;
    
-
+    
     if(shouldMatchExactHref && (asPath == rest.href || asPath == rest.as)){
         isActive = true;
     }
