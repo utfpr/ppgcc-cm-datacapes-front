@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ToastContainer
         position="top-right"
         hideProgressBar={false}
-        autoClose={false}
+        autoClose={3000}
         newestOnTop={true}
         closeOnClick={false}
         draggable={false}
