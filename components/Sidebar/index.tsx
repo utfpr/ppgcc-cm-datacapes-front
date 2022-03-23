@@ -47,6 +47,7 @@ export const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
                             <NavItem  icon={link.icon} fontSize={"1.15rem"}>
                                 {link.name}
                             </NavItem>
+           
                         </ActiveLink>
                     ))}
                 </Box>

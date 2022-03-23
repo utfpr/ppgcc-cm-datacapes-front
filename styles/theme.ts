@@ -28,8 +28,6 @@ export const theme = extendTheme({
             'dark': '#F9C846',
             'orange': '#ECB753'
         },
-        
-
     },
     fonts: {
         heading: 'Poppins',
