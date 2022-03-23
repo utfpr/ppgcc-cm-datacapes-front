@@ -1,6 +1,7 @@
 import { Button, Input } from "@chakra-ui/react";
 import {  ChangeEvent, useEffect, useRef, useState } from "react";
 import { FiUpload } from "react-icons/fi";
+import { toast } from "react-toastify";
 
 
 interface HTMLInputEvent extends ChangeEvent {
@@ -16,7 +17,12 @@ export function XMLUploadButton(){
 
   const handleChange = (e: HTMLInputEvent) => {
     var files = e.target.files?.[0];
+
+    if(files?.name.split('.').pop() != "xml") {
+      return toast.error('Formato errado.');
+    }
     setFileName(files?.name);
+    return toast.success('Arquivo adicionado.');
   };
  
     return (
