@@ -1,14 +1,37 @@
-import { Button } from "@chakra-ui/react";
+import { Button, Input } from "@chakra-ui/react";
+import {  ChangeEvent, useEffect, useRef, useState } from "react";
 import { FiUpload } from "react-icons/fi";
 
-interface XMLUploadButtonProps {
-  onOpen: () => void;
+
+interface HTMLInputEvent extends ChangeEvent {
+  target: HTMLInputElement & EventTarget;
+
 }
 
-export function XMLUploadButton({onOpen}: XMLUploadButtonProps){
+
+export function XMLUploadButton(){
+
+  const fileRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+  const [fileName, setFileName] = useState< string | undefined>("Enviar XML");
+
+  const handleChange = (e: HTMLInputEvent) => {
+    var files = e.target.files?.[0];
+    setFileName(files?.name);
+  };
+ 
     return (
-  <Button leftIcon={<FiUpload />} colorScheme='yellow' variant='solid' onClick={onOpen}>
-    Enviar XML
+      <>
+  <Button leftIcon={<FiUpload />} colorScheme='yellow' variant='solid' onClick={() => fileRef.current.click()}>
+  {fileName}
   </Button>
+    <Input
+    ref={fileRef}
+    onChange={(e) => handleChange(e)}
+    multiple={false}
+    type="file"
+    accept=".xml"
+    sx={{border: 'none',display: 'none'}}
+  />
+      </>
     )
 }

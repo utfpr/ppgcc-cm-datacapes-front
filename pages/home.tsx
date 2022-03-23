@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <div>
-      <XMLUploadButton  onOpen={onOpen}/>
+      <XMLUploadButton  />
       <XMLUploadModal isOpen={isOpen} onClose={onClose} />
     </div>
   );
