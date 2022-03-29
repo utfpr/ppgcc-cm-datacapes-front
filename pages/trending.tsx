@@ -1,5 +1,3 @@
-export default function Trending(){
-    return (
-        <>wwww</>
-    )
+export default function Trending() {
+  return <>wwww</>;
 }

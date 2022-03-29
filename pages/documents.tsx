@@ -1,7 +1,7 @@
 export default function Documents() {
-    return (
-      <div>
-        <h1>Hello Next.js</h1>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h1>Hello Next.js</h1>
+    </div>
+  );
+}
