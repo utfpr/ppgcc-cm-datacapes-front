@@ -19,7 +19,7 @@ export default function Navbar({ children }: { children: ReactNode }) {
     <Box>
       <Box minH="100vh" bg={useColorModeValue("white", "white")}>
         <SidebarContent
-          onClose={() => onClose}
+          onClose={onClose}
           display={{ base: "none", md: "block" }}
         />
 

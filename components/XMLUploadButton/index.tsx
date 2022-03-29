@@ -23,7 +23,7 @@ export function XMLUploadButton() {
 
     const files = e.target.files?.[0];
 
-    if (files?.name.split(".").pop() != "xml") {
+    if (files?.name.split(".").pop() !== "xml") {
       return toast.error("Formato errado.");
     }
     if (files?.size > 10000000) {
@@ -46,7 +46,7 @@ export function XMLUploadButton() {
       </Button>
       <Input
         ref={fileRef}
-        onChange={(e) => handleChange(e)}
+        onChange={handleChange}
         multiple={false}
         type="file"
         accept=".xml"

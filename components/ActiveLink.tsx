@@ -1,6 +1,6 @@
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
-import { cloneElement, ReactElement } from "react";
+import { cloneElement, ReactElement, useMemo } from "react";
 import React from "react";
 
 interface ActiveLinkProps extends LinkProps {
@@ -18,17 +18,14 @@ export function ActiveLink({
   ...rest
 }: ActiveLinkProps) {
   const { asPath } = useRouter();
-  let isActive = false;
 
-  if (shouldMatchExactHref && (asPath == rest.href || asPath == rest.as)) {
-    isActive = true;
-  }
-  if (
-    (!shouldMatchExactHref && asPath.startsWith(String(rest.href))) ||
-    asPath.startsWith(String(rest.as))
-  ) {
-    isActive = true;
-  }
+  const isActive = useMemo(() => {
+    return shouldMatchExactHref
+      ? asPath == (rest.href || asPath == rest.as)
+      : (asPath.startsWith(String(rest.href))) || asPath.startsWith(String(rest.as))
+  }, [asPath, shouldMatchExactHref, rest]);
+
+
   return (
     <Link {...rest}>
       {cloneElement(children, {

@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         position="top-right"
         hideProgressBar={false}
         autoClose={3000}
-        newestOnTop={true}
+        newestOnTop
         closeOnClick={false}
         draggable={false}
         rtl={false}
