@@ -43,7 +43,7 @@ export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         Datacapes
       </Text>
       <Flex justifyContent={"center"} position="absolute" right={"10"}>
-        <Image src="logo3.svg" w="100px" />
+        <Image src="logo.svg" w="100px" />
       </Flex>
     </Flex>
   );

@@ -91,7 +91,7 @@ export const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           left="10"
           right={"10"}
         >
-          <Image src="logo3.svg" w="100px" />
+          <Image src="logo.svg" w="100px" />
         </Flex>
       </Box>
     </Box>
