@@ -3,7 +3,7 @@ import { XMLUploadButton } from "../components/XMLUploadButton";
 import { XMLUploadModal } from "../components/XMLUploadModal";
 
 export default function Home() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onClose } = useDisclosure();
 
   return (
     <div>
