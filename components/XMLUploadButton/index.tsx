@@ -26,6 +26,7 @@ export function XMLUploadButton() {
     if (files?.name.split(".").pop() !== "xml") {
       return toast.error("Formato errado.");
     }
+
     if (files?.size > 10000000) {
       return toast.error("Tamanho máximo excedido (10MB).");
     }
