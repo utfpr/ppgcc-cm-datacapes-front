@@ -27,8 +27,7 @@ const dataTest = [
 ];
 
 export default function Home() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const [page, setPage] = useState(1);
+  const { isOpen, onClose } = useDisclosure();
   return (
     <div>
       <XMLUploadButton />
