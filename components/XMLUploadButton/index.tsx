@@ -38,6 +38,7 @@ export function XMLUploadButton() {
   return (
     <>
       <Button
+        title="upload"
         leftIcon={<FiUpload />}
         colorScheme="yellow"
         variant="solid"
@@ -46,7 +47,7 @@ export function XMLUploadButton() {
         {fileName}
       </Button>
       <Input
-        title="upload"
+        title="file"
         ref={fileRef}
         onChange={handleChange}
         multiple={false}

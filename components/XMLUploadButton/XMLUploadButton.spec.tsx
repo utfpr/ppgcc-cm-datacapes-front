@@ -11,7 +11,15 @@ describe("XMLUploadButton components", () => {
   it("should attach a file", () => {
     const { debug } = render(<XMLUploadButton />);
     debug();
-    const fileRef = screen.getByTitle("upload");
+    const fileRef = screen.getByTitle("file");
     expect(fileRef).toBeInTheDocument();
+  });
+  it("should open file selector when clicked", () => {
+    const { debug } = render(<XMLUploadButton />);
+    debug();
+    const button = screen.getByTitle("upload");
+    expect(button).toBeInTheDocument();
+    button.click();
+    expect(screen.getByTitle("file")).toBeInTheDocument();
   });
 });
