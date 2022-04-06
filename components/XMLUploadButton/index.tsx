@@ -46,6 +46,7 @@ export function XMLUploadButton() {
         {fileName}
       </Button>
       <Input
+        title="upload"
         ref={fileRef}
         onChange={handleChange}
         multiple={false}
