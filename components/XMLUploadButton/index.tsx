@@ -38,6 +38,7 @@ export function XMLUploadButton() {
   return (
     <>
       <Button
+        title="upload"
         leftIcon={<FiUpload />}
         colorScheme="yellow"
         variant="solid"
