@@ -11,9 +11,9 @@ import { SidebarContent } from "../Sidebar";
 
 /**
  *
- * @return {box}
+ *
  */
-export default function Navbar({ children }: { children: ReactNode }) {
+export function Navbar({ children }: { children: ReactNode }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box>

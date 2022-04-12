@@ -15,7 +15,7 @@ import {
   FiFileText,
   FiFilePlus,
 } from "react-icons/fi";
-import { ActiveLink } from "../ActiveLink";
+import { ActiveLink } from "../ActiveLink/ActiveLink";
 import { NavItem } from "../NavItem";
 import React from "react";
 
