@@ -29,6 +29,7 @@ export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         variant="outline"
         onClick={onOpen}
         color="white"
+        title="menu"
         aria-label="open menu"
         icon={<FiMenu />}
       />
