@@ -71,6 +71,7 @@ export const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             Datacapes
           </Text>
           <CloseButton
+            title="close"
             display={{ base: "flex", md: "none" }}
             onClick={onClose}
           />
