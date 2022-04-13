@@ -15,7 +15,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { RiAddLine, RiFileCopy2Fill } from "react-icons/ri";
-import { Pagination } from "../../components/Pagination/index";
+import { Pagination } from "./Pagination/index";
 import NextLink from "next/link";
 import { useState } from "react";
 import { SearchBox } from "./SearchBox";

@@ -1,8 +1,8 @@
 import { useDisclosure } from "@chakra-ui/react";
 import { useState } from "react";
 import { Listing } from "../components/Listing";
-import { Navbar } from "../components/Navbar";
-import { Pagination } from "../components/Pagination";
+import { Navbar } from "../components/Sidebar/Navbar";
+import { Pagination } from "../components/Listing/Pagination";
 import { XMLUploadButton } from "../components/XMLUploadButton";
 import { XMLUploadModal } from "../components/XMLUploadModal";
 
