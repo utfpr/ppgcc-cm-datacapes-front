@@ -1,7 +1,6 @@
 import { useDisclosure } from "@chakra-ui/react";
 import { Listing } from "../components/Listing";
-import Navbar from "../components/Navbar";
-import { Pagination } from "../components/Pagination";
+import { Navbar } from "../components/Sidebar/Navbar";
 import { XMLUploadButton } from "../components/XMLUploadButton";
 import { XMLUploadModal } from "../components/XMLUploadModal";
 

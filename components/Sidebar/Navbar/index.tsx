@@ -7,7 +7,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { MobileNav } from "../MobileNav";
-import { SidebarContent } from "../Sidebar";
+import { SidebarContent } from "..";
 
 /**
  *
