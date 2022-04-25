@@ -4,6 +4,7 @@ import {
   Input,
   VStack,
   Button,
+  FormErrorMessage,
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -42,18 +43,24 @@ export default function LoginForm() {
       w={{ base: "90%", md: 500 }}
       h="100vh"
       justifyContent="center"
-      onSubmit={formik.handleSubmit}
+      // onSubmit={formik.handleSubmit}
     >
-      <FormControl>
+      <FormControl
+        isInvalid={formik.errors.nickname && formik.touched.nickname}
+      >
         <FormLabel>Apelido</FormLabel>
         <Input
           id="nickname"
           type="text"
           value={formik.values.nickname}
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
         />
+        <FormErrorMessage>{formik.errors.nickname}</FormErrorMessage>
       </FormControl>
-      <FormControl>
+      <FormControl
+        isInvalid={formik.errors.password && formik.touched.password}
+      >
         <FormLabel htmlFor="password">Senha</FormLabel>
         <Input
           id="password"
@@ -61,6 +68,7 @@ export default function LoginForm() {
           value={formik.values.password}
           onChange={formik.handleChange}
         ></Input>
+        <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
       </FormControl>
       <Button colorScheme="yellow" variant="solid" type="submit">
         Login
