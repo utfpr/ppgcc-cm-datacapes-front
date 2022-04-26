@@ -8,14 +8,9 @@ import {
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
 
 export default function LoginForm() {
-  // function errorMessageExample() {
-  // function errorMessageExample() {
-  // const [input, setInput] = useState("");
-
-  // const handleInputChange = (e) => setInput(e.target.value);
-
   const formik = useFormik({
     initialValues: {
       nickname: "",
@@ -30,11 +25,20 @@ export default function LoginForm() {
     }),
     onSubmit: (values, actions) => {
       alert(JSON.stringify(values, null, 2));
+      console.log(values);
+
+      const res = axios
+        .get("/api/v1/auth", {
+          headers: {
+            nickname: values.nickname,
+            password: values.password,
+          },
+        })
+        .then((res) => res.data);
+
       actions.resetForm();
     },
   });
-
-  // const isError = input === "";
 
   return (
     <VStack
@@ -43,7 +47,7 @@ export default function LoginForm() {
       w={{ base: "90%", md: 500 }}
       h="100vh"
       justifyContent="center"
-      // onSubmit={formik.handleSubmit}
+      onSubmit={formik.handleSubmit}
     >
       <FormControl
         isInvalid={formik.errors.nickname && formik.touched.nickname}
@@ -52,9 +56,7 @@ export default function LoginForm() {
         <Input
           id="nickname"
           type="text"
-          value={formik.values.nickname}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
+          {...formik.getFieldProps("nickname")}
         />
         <FormErrorMessage>{formik.errors.nickname}</FormErrorMessage>
       </FormControl>
@@ -65,15 +67,13 @@ export default function LoginForm() {
         <Input
           id="password"
           type="password"
-          value={formik.values.password}
-          onChange={formik.handleChange}
+          {...formik.getFieldProps("password")}
         ></Input>
         <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
       </FormControl>
-      <Button colorScheme="yellow" variant="solid" type="submit">
+      <Button colorScheme="yellow" variant="solid" type="submit" onClick={}>
         Login
       </Button>
     </VStack>
   );
-  // }
 }
