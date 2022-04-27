@@ -69,7 +69,7 @@ export function Listing({ data }: ListingProps) {
               </Thead>
               <Tbody>
                 {data.map((item, index) => (
-                  <Tr>
+                  <Tr key={index}>
                     <Td px={["4", "4", "6"]}>
                       <Checkbox colorScheme="yellow" />
                     </Td>
@@ -109,7 +109,7 @@ export function Listing({ data }: ListingProps) {
             </Table>
             <Pagination
               totalCountOfRegisters={100}
-              currentPage={1}
+              currentPage={page}
               registersPerPage={10}
               onPageChange={setPage}
             />
