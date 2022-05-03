@@ -9,10 +9,6 @@ import {
 import { MobileNav } from "../MobileNav";
 import { SidebarContent } from "..";
 
-/**
- *
- *
- */
 export function Navbar({ children }: { children: ReactNode }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (

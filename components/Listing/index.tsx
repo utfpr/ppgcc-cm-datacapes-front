@@ -109,7 +109,7 @@ export function Listing({ data }: ListingProps) {
             </Table>
             <Pagination
               totalCountOfRegisters={100}
-              currentPage={1}
+              currentPage={page}
               registersPerPage={10}
               onPageChange={setPage}
             />
