@@ -75,7 +75,11 @@ export function Listing() {
                                 </Tr>
                             </Tbody>
                         </Table>
+<<<<<<< HEAD
+                        <Pagination totalCountOfRegisters={100} currentPage={page} registersPerPage={10} onPageChange={setPage} />
+=======
                         <Pagination totalCountOfRegisters={100} currentPage={1} registersPerPage={10} onPageChange={setPage} />
+>>>>>>> 34c90ab3a8dc91f41a976fb6100978482a0dfca8
                     </>
                 </Box>
             </Flex >
