@@ -5,10 +5,22 @@ import {
   VStack,
   Button,
   FormErrorMessage,
+  Flex,
+  Image,
+  Box,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import { useFormik } from "formik";
+import { Form, Formik, useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { ActiveLink } from "../ActiveLink";
+import { useNavigate } from "react-router-dom";
+interface LinkItemProps {
+  name: string;
+  href: string;
+}
+
+const LinkItems: Array<LinkItemProps> = [{ name: "Home", href: "/home" }];
 
 export default function LoginForm() {
   const formik = useFormik({
@@ -41,39 +53,60 @@ export default function LoginForm() {
   });
 
   return (
-    <VStack
-      as="form"
-      mx="auto"
-      w={{ base: "90%", md: 500 }}
-      h="100vh"
-      justifyContent="center"
-      onSubmit={formik.handleSubmit}
-    >
-      <FormControl
-        isInvalid={formik.errors.nickname && formik.touched.nickname}
+    <Box bg={useColorModeValue("dark.black", "dark.black")} h="100px">
+      <VStack
+        as="form"
+        mx="auto"
+        w={{ base: "90%", md: 500 }}
+        h="100vh"
+        justifyContent="center"
+        // onSubmit={formik.handleSubmit}
       >
-        <FormLabel>Apelido</FormLabel>
-        <Input
-          id="nickname"
-          type="text"
-          {...formik.getFieldProps("nickname")}
-        />
-        <FormErrorMessage>{formik.errors.nickname}</FormErrorMessage>
-      </FormControl>
-      <FormControl
-        isInvalid={formik.errors.password && formik.touched.password}
-      >
-        <FormLabel htmlFor="password">Senha</FormLabel>
-        <Input
-          id="password"
-          type="password"
-          {...formik.getFieldProps("password")}
-        ></Input>
-        <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
-      </FormControl>
-      <Button colorScheme="yellow" variant="solid" type="submit" onClick={}>
-        Login
-      </Button>
-    </VStack>
+        <Flex
+          justifyContent={"center"}
+          position="absolute"
+          bottom={"3"}
+          left="10"
+          right={"10"}
+        >
+          <Image src="logo.svg" w="100px" />
+        </Flex>
+        {/* <Form onSubmit={formik.handleSubmit}> */}
+        <FormControl
+          isInvalid={formik.errors.nickname && formik.touched.nickname}
+        >
+          <FormLabel>Apelido</FormLabel>
+          <Input
+            id="nickname"
+            type="text"
+            {...formik.getFieldProps("nickname")}
+          />
+          <FormErrorMessage>{formik.errors.nickname}</FormErrorMessage>
+        </FormControl>
+        <FormControl
+          isInvalid={formik.errors.password && formik.touched.password}
+        >
+          <FormLabel htmlFor="password">Senha</FormLabel>
+          <Input
+            id="password"
+            type="password"
+            {...formik.getFieldProps("password")}
+          ></Input>
+          <FormErrorMessage>{formik.errors.password}</FormErrorMessage>
+        </FormControl>
+
+        {/* {LinkItems.map((link) => (
+          <ActiveLink key={link.name} href={link.href}>
+            <Button colorScheme="yellow" variant="solid" type="submit">
+              Login
+            </Button>
+          </ActiveLink>
+        ))} */}
+        <Button colorScheme="yellow" variant="solid" type="submit">
+          Login
+        </Button>
+        {/* /* </Form> */}
+      </VStack>
+    </Box>
   );
 }
