@@ -2,18 +2,10 @@ import {
   Heading,
   Avatar,
   Box,
-<<<<<<< HEAD
-=======
-  Center,
->>>>>>> 34c90ab3a8dc91f41a976fb6100978482a0dfca8
   Text,
   Stack,
   Button,
   Link,
-<<<<<<< HEAD
-=======
-  Badge,
->>>>>>> 34c90ab3a8dc91f41a976fb6100978482a0dfca8
   useColorModeValue,
   Flex,
 } from "@chakra-ui/react";
