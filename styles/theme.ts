@@ -27,7 +27,11 @@ export const theme = extendTheme({
       light: "#FEEA7F",
       dark: "#F9C846",
       orange: "#ECB753",
+      white: "#FDE8C3",
+      orangeHover: "#EDDE53",
+      skin: "#FDE8C3",
     },
+
   },
   fonts: {
     heading: "Poppins",
