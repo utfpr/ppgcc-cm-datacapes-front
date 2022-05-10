@@ -1,5 +1,9 @@
 import { useDisclosure } from "@chakra-ui/react";
+<<<<<<< HEAD
+import Navbar from "../components/Navbar";
+=======
 import { Listing } from "../components/Listing";
+>>>>>>> 35c3f46fe6b0db10bc70474308a4f990852d7f31
 import { XMLUploadButton } from "../components/XMLUploadButton";
 import { XMLUploadModal } from "../components/XMLUploadModal";
 
@@ -27,10 +31,14 @@ const dataTest = [
 export default function Home() {
   const { isOpen, onClose } = useDisclosure();
   return (
-    <div>
+    <Navbar>
       <XMLUploadButton />
       <XMLUploadModal isOpen={isOpen} onClose={onClose} />
+<<<<<<< HEAD
+    </Navbar>
+=======
       <Listing data={dataTest} />
     </div>
+>>>>>>> 35c3f46fe6b0db10bc70474308a4f990852d7f31
   );
 }

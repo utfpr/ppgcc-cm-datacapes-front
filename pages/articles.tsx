@@ -1,7 +1,9 @@
+import Navbar from "../components/Navbar";
+
 export default function Articles() {
   return (
-    <div>
+    <Navbar>
       <h1>Hello Next.js</h1>
-    </div>
+    </Navbar>
   );
 }
