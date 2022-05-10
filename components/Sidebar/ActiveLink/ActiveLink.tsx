@@ -22,9 +22,9 @@ export function ActiveLink({
   const isActive = useMemo(() => {
     return shouldMatchExactHref
       ? asPath == (rest.href || asPath == rest.as)
-      : (asPath.startsWith(String(rest.href))) || asPath.startsWith(String(rest.as))
+      : asPath.startsWith(String(rest.href)) ||
+          asPath.startsWith(String(rest.as));
   }, [asPath, shouldMatchExactHref, rest]);
-
 
   return (
     <Link {...rest}>

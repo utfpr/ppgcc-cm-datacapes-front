@@ -7,13 +7,9 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { MobileNav } from "../MobileNav";
-import { SidebarContent } from "../Sidebar";
+import { SidebarContent } from "..";
 
-/**
- *
- * @return {box}
- */
-export default function Navbar({ children }: { children: ReactNode }) {
+export function Navbar({ children }: { children: ReactNode }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box>

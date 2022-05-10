@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MobileNav components should render correctly 1`] = `
+<div>
+  <div
+    class="css-fs4ghr"
+  >
+    <button
+      aria-label="open menu"
+      class="chakra-button css-bjerva"
+      title="menu"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        fill="none"
+        focusable="false"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="3"
+          x2="21"
+          y1="12"
+          y2="12"
+        />
+        <line
+          x1="3"
+          x2="21"
+          y1="6"
+          y2="6"
+        />
+        <line
+          x1="3"
+          x2="21"
+          y1="18"
+          y2="18"
+        />
+      </svg>
+    </button>
+    <p
+      class="chakra-text css-1nunkgq"
+    >
+      Datacapes
+    </p>
+    <div
+      class="css-13hfjc4"
+    >
+      <img
+        class="chakra-image css-v7v99c"
+        src="logo.svg"
+      />
+    </div>
+  </div>
+</div>
+`;

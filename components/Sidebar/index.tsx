@@ -15,8 +15,8 @@ import {
   FiFileText,
   FiFilePlus,
 } from "react-icons/fi";
-import { ActiveLink } from "../ActiveLink";
-import { NavItem } from "../NavItem";
+import { ActiveLink } from "./ActiveLink/ActiveLink";
+import { NavItem } from "./NavItem";
 import React from "react";
 
 interface LinkItemProps {
@@ -71,6 +71,7 @@ export const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             Datacapes
           </Text>
           <CloseButton
+            title="close"
             display={{ base: "flex", md: "none" }}
             onClick={onClose}
           />

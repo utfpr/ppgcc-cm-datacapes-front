@@ -15,10 +15,10 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { RiAddLine, RiFileCopy2Fill } from "react-icons/ri";
-import { Pagination } from "../../components/Pagination/index";
+import { Pagination } from "./Pagination/index";
 import NextLink from "next/link";
 import { useState } from "react";
-import { SearchBox } from "../SearchBox";
+import { SearchBox } from "./SearchBox";
 
 interface ListingProps {
   data: {
@@ -62,14 +62,15 @@ export function Listing({ data }: ListingProps) {
                   <Th px={["4", "4", "6"]} color="gray.300" w="8">
                     <Checkbox colorScheme="yellow" />
                   </Th>
-                  <Th color="gray.200">TItulo</Th>
+                  <Th color="gray.200">Titulo</Th>
                   {isWideVersion && <Th color="gray.200">Autor</Th>}
                   <Th w="8"></Th>
                 </Tr>
               </Thead>
               <Tbody>
                 {data.map((item, index) => (
-                  <Tr key={index}>
+                  <Tr key={item.id}>
+
                     <Td px={["4", "4", "6"]}>
                       <Checkbox colorScheme="yellow" />
                     </Td>
