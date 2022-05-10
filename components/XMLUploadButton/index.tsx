@@ -3,6 +3,7 @@ import { ChangeEvent, useRef, useState } from "react";
 import { FiUpload } from "react-icons/fi";
 import { toast } from "react-toastify";
 import React from "react";
+import axios from "axios";
 
 interface HTMLInputEvent extends ChangeEvent {
   target: HTMLInputElement & EventTarget;
@@ -32,6 +33,16 @@ export function XMLUploadButton() {
     }
 
     setFileName(files?.name);
+    
+    var formData = new FormData();
+    formData.append("xml", files)
+    
+    axios.post('/api/parser', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+    
     return toast.success("Arquivo adicionado.");
   };
 
