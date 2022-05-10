@@ -70,6 +70,7 @@ export function Listing({ data }: ListingProps) {
               <Tbody>
                 {data.map((item, index) => (
                   <Tr key={item.id}>
+
                     <Td px={["4", "4", "6"]}>
                       <Checkbox colorScheme="yellow" />
                     </Td>
