@@ -30,6 +30,7 @@ export default function Home() {
     <div>
       <XMLUploadButton />
       <XMLUploadModal isOpen={isOpen} onClose={onClose} />
+
       <Listing data={dataTest} />
     </div>
   );

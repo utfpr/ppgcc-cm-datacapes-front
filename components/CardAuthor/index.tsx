@@ -2,12 +2,10 @@ import {
   Heading,
   Avatar,
   Box,
-  Center,
   Text,
   Stack,
   Button,
   Link,
-  Badge,
   useColorModeValue,
   Flex,
 } from "@chakra-ui/react";

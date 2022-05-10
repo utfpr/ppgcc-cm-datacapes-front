@@ -1,4 +1,4 @@
-import { Box, Flex, theme, Wrap, WrapItem } from "@chakra-ui/react";
+import { Box, Flex, Wrap, WrapItem } from "@chakra-ui/react";
 import { CardAuthor } from "../components/CardAuthor";
 import { Pagination } from "../components/Pagination";
 import { SearchBox } from "../components/SearchBox";
