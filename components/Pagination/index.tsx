@@ -7,6 +7,7 @@ interface PaginationProps {
   currentPage?: number;
   onPageChange: (page: number) => void;
   colorList?: string;
+
 }
 
 const siblingsCount = 1;

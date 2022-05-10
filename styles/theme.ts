@@ -32,6 +32,7 @@ export const theme = extendTheme({
       orangeHover: "#EDDE53",
       skin: "#FDE8C3",
     },
+
   },
   fonts: {
     heading: "Poppins",
