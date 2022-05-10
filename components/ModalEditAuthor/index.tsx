@@ -10,7 +10,6 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  useDisclosure,
 } from "@chakra-ui/react";
 import { ChangeEvent, useRef, useState } from "react";
 import { FiUpload } from "react-icons/fi";
@@ -20,8 +19,11 @@ interface HTMLInputEvent extends ChangeEvent {
   target: HTMLInputElement & EventTarget;
 }
 
-export function ModalEditAuthor() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+export function ModalEditAuthor({ isOpen, onClose }: ModalProps) {
   const [name, setName] = useState("Enviar Foto");
   const regExpImageFormat = /^.*\.(jpg|jpeg|png)$/i;
 
@@ -45,8 +47,6 @@ export function ModalEditAuthor() {
 
   return (
     <>
-      <Button onClick={onOpen}>Open Modal</Button>
-
       <Modal
         initialFocusRef={initialRef}
         isCentered

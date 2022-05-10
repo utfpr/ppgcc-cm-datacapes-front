@@ -1,7 +1,13 @@
+import { Button, useDisclosure } from "@chakra-ui/react";
+import { useState } from "react";
+import { ModalEditAuthor } from "../components/ModalEditAuthor";
+
 export default function Documents() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <div>
-      <h1>Hello Next.js</h1>
+      <Button onClick={onOpen}>Abrir modal edit</Button>
+      <ModalEditAuthor isOpen={isOpen} onClose={onClose} />
     </div>
   );
 }
