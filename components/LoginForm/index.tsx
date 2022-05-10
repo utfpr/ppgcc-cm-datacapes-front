@@ -18,13 +18,13 @@ import { useNavigate } from "react-router-dom";
 export default function LoginForm() {
   const formik = useFormik({
     initialValues: {
-      nickname: "",
+      username: "",
       password: "",
     },
     validationSchema: Yup.object({
-      nickname: Yup.string()
+      username: Yup.string()
         .required("É necessário inserir um apelido")
-        .min(6, "Nickname é muito curto"),
+        .min(6, "Username é muito curto"),
 
       password: Yup.string().required("É necessário inserir uma senha"),
     }),
@@ -37,7 +37,7 @@ export default function LoginForm() {
       const res = axios
         .get("/api/v1/auth", {
           headers: {
-            nickname: values.nickname,
+            username: values.username,
             password: values.password,
           },
         })
@@ -49,7 +49,7 @@ export default function LoginForm() {
   });
 
   const isInvalid =
-    formik.values.nickname == "" || formik.values.password == "";
+    formik.values.username == "" || formik.values.password == "";
 
   return (
     <form onSubmit={formik.handleSubmit}>
@@ -72,17 +72,17 @@ export default function LoginForm() {
           </Flex>
 
           <FormControl
-            isInvalid={formik.errors.nickname && formik.touched.nickname}
+            isInvalid={formik.errors.username && formik.touched.username}
           >
             <FormLabel>Username</FormLabel>
             <Input
-              id="nickname"
+              id="username"
               type="text"
-              {...formik.getFieldProps("nickname")}
-              value={formik.values.nickname}
+              {...formik.getFieldProps("username")}
+              value={formik.values.username}
               onChange={formik.handleChange}
             />
-            <FormErrorMessage>{formik.errors.nickname}</FormErrorMessage>
+            <FormErrorMessage>{formik.errors.username}</FormErrorMessage>
           </FormControl>
           <FormControl
             isInvalid={formik.errors.password && formik.touched.password}
