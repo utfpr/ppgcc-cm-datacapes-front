@@ -1,5 +1,4 @@
 import { Button, useDisclosure } from "@chakra-ui/react";
-import { useState } from "react";
 import { ModalEditAuthor } from "../components/ModalEditAuthor";
 
 export default function Documents() {
