@@ -35,13 +35,21 @@ export function XMLUploadButton() {
     setFileName(files?.name);
     
     var formData = new FormData();
-    formData.append("xml", files)
+    formData.append("arquivo", files)
     
-    axios.post('/api/parser', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    })
+    const api = axios.create({
+      baseURL: 'http://localhost:3333'
+    });
+
+    try {
+      api.post('/api/parser', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
+    } catch(error) {
+      console.log(error)
+    }
     
     return toast.success("Arquivo adicionado.");
   };
