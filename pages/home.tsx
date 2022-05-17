@@ -26,6 +26,7 @@ const dataTest = [
 
 export default function Home() {
   const { isOpen, onClose } = useDisclosure();
+
   return (
     <div>
       <XMLUploadButton />
