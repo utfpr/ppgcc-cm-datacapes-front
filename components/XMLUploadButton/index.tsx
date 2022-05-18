@@ -34,7 +34,7 @@ export function XMLUploadButton() {
 
     setFileName(files?.name);
     
-    var formData = new FormData();
+    const formData = new FormData();
     formData.append("arquivo", files)
     
     const api = axios.create({
