@@ -21,7 +21,7 @@ function generatePagesArray(from: number, to: number) {
 
 export function Pagination({
   totalCountOfRegisters,
-  registersPerPage = 10,
+  registersPerPage = 8,
   currentPage,
   onPageChange,
   colorList,
@@ -36,9 +36,9 @@ export function Pagination({
   const nextPage =
     currentPage < lastPage
       ? generatePagesArray(
-          currentPage,
-          Math.min(currentPage + siblingsCount, lastPage)
-        )
+        currentPage,
+        Math.min(currentPage + siblingsCount, lastPage)
+      )
       : [];
 
   return (
@@ -50,7 +50,7 @@ export function Pagination({
       spacing="6"
     >
       <Box color={colorList ? colorList : "white"}>
-        <strong>0</strong> - <strong>10</strong> de <strong>100</strong>
+        <strong>{registersPerPage * (currentPage - 1)}</strong> - <strong>{registersPerPage}</strong> de <strong>{totalCountOfRegisters}</strong>
       </Box>
       <Stack direction="row" spacing="2">
         {currentPage > siblingsCount + 1 && (
