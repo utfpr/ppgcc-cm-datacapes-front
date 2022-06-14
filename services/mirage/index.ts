@@ -46,7 +46,7 @@ export function makeServer() {
         },
       }),
     },
-    seeds(server) {
+    seeds(server: { createList: (arg0: string, arg1: number) => void }) {
       server.createList("author", 50);
     },
     routes() {
@@ -54,7 +54,7 @@ export function makeServer() {
       this.timing = 750;
 
       this.get("/authors", function (schema, request) {
-        const { page = 1, per_page = 10 } = request.queryParams;
+        const { page = 1, per_page = 8 } = request.queryParams;
 
         const total = schema.all("author").length;
 
@@ -65,7 +65,6 @@ export function makeServer() {
           pageStart,
           pageEnd
         );
-
         return new Response(
           200,
           { "x-total-count": String(total) },
@@ -73,10 +72,11 @@ export function makeServer() {
         );
       });
 
-      this.get("/author/:id");
-      this.post("/author");
+      this.get("/authors/:id");
+      this.post("/authors");
       this.namespace = "";
       this.passthrough();
+
     },
   });
 

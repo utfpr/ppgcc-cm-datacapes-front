@@ -1,7 +1,7 @@
 import { useQuery, UseQueryOptions } from "react-query";
 import { api } from "../api";
 
-interface Author {
+export interface Author {
   id: string;
   orcid: string;
   lattes_id: string;
@@ -32,6 +32,7 @@ export async function getAuthors(page: number): Promise<GetAuthorsResponse> {
       institution: author.institution,
     };
   });
+  console.log(authors, totalCount)
   return { authors, totalCount };
 }
 

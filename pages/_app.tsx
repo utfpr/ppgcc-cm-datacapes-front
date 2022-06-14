@@ -9,9 +9,9 @@ import { QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { queryClient } from "../services/queryClient";
 
-if (process.env.NODE_ENV == "development") {
-  makeServer();
-}
+// if (process.env.NODE_ENV == "development") {
+makeServer();
+// }
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
