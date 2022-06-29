@@ -3,6 +3,7 @@ import { ChangeEvent, useRef, useState } from "react";
 import { FiUpload } from "react-icons/fi";
 import { toast } from "react-toastify";
 import React from "react";
+import { api } from "../../services/api";
 
 interface HTMLInputEvent extends ChangeEvent {
   target: HTMLInputElement & EventTarget;
@@ -16,7 +17,7 @@ export function XMLUploadButton() {
   const fileRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const [fileName, setFileName] = useState<string | undefined>("Enviar XML");
 
-  const handleChange = (e: HTMLInputEvent) => {
+  const handleChange = async (e: HTMLInputEvent) => {
     if (!e.target.files?.length) {
       return;
     }
@@ -32,6 +33,13 @@ export function XMLUploadButton() {
     }
 
     setFileName(files?.name);
+
+    const formData = new FormData();
+    formData.append("arquivo", files, "curriculo.xml");
+    const { data } = await api.post("/parser", files);
+
+    console.log(data);
+
     return toast.success("Arquivo adicionado.");
   };
 
