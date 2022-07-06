@@ -1,4 +1,4 @@
-import { useDisclosure } from "@chakra-ui/react";
+import { useDisclosure, VStack } from "@chakra-ui/react";
 import { Listing } from "../components/Listing";
 import { XMLUploadButton } from "../components/XMLUploadButton";
 import { XMLUploadModal } from "../components/XMLUploadModal";
@@ -6,21 +6,36 @@ import { XMLUploadModal } from "../components/XMLUploadModal";
 const dataTest = [
   {
     id: "aasd34-32-df-sdf3",
-    title: "Teste a b c sjdbsakjd dgfs asd asd ",
-    author: "joaozinho",
-    email: "joaozinho@gmail.com",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    publi_type: "Artigo",
+    authors: [
+      "Ivanilton polato",
+      "Sebastin polato",
+    ],
+    qualis: "A",
+    year: "2020",
   },
   {
     id: "aasd34-32-sddsf-sdf3",
-    title: "hhhhhhhhhhhhhh a b c sjdbsakjd dgfs asd asd ",
-    author: "dssssdghh",
-    email: "aaaafffgfg@gmail.com",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ",
+    publi_type: "Artigo",
+    authors: [
+      "Ivanilton polato",
+      "Juanito",
+    ],
+    qualis: "A",
+    year: "2020",
   },
   {
     id: "aasd34-32-asasf-sdf3",
-    title: "fdsdsfdfds a b c sjdbsakjd dgfs asd asd ",
-    author: "sadasdsaddsa",
-    email: "gfgffggfhr@gmail.com",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    publi_type: "Artigo",
+    authors: [
+      "Ivanilton polato",
+      "Fernando",
+    ],
+    qualis: "A",
+    year: "2020",
   },
 ];
 
@@ -29,7 +44,10 @@ export default function Home() {
 
   return (
     <div>
-      <XMLUploadButton />
+      <VStack>
+        <XMLUploadButton />
+      </VStack>
+
       <XMLUploadModal isOpen={isOpen} onClose={onClose} />
       <Listing data={dataTest} />
     </div>

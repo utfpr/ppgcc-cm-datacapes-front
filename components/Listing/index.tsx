@@ -19,13 +19,14 @@ import { Pagination } from "../../components/Pagination/index";
 import NextLink from "next/link";
 import { useState } from "react";
 import { SearchBox } from "../SearchBox";
-
 interface ListingProps {
   data: {
     id: string;
     title: string;
-    author: string;
-    email: string;
+    publi_type: string;
+    authors: string[];
+    qualis: string;
+    year: string;
   }[];
 }
 
@@ -64,6 +65,9 @@ export function Listing({ data }: ListingProps) {
                   </Th>
                   <Th color="gray.200">TItulo</Th>
                   {isWideVersion && <Th color="gray.200">Autor</Th>}
+                  <Th w="8">Tipo de publicação</Th>
+                  <Th w="8">Qualis</Th>
+                  <Th w="8">Ano</Th>
                   <Th w="8"></Th>
                 </Tr>
               </Thead>
@@ -74,23 +78,25 @@ export function Listing({ data }: ListingProps) {
                       <Checkbox colorScheme="yellow" />
                     </Td>
                     <>
-                      <Td color={"white"} maxW={200}>
+                      <Td color={"white"} maxW={300}>
                         {item.title}
                       </Td>
                       {isWideVersion && (
                         <Td color={"white"}>
                           <Box>
                             <Link color={"white"}>
-                              <Text fontWeight="bold">{item.author}</Text>
+                              <Text fontWeight="bold">{item.authors[0]}</Text>
                             </Link>
                             <Text fontSize="sm" color="gray.300">
-                              {item.email}
+                              {item.authors[1]}
                             </Text>
                           </Box>
                         </Td>
                       )}
                     </>
-
+                    <Td color={"white"}>{item.publi_type}</Td>
+                    <Td color={"white"}>{item.qualis}</Td>
+                    <Td color={"white"}>{item.year}</Td>
                     <Td>
                       <Button
                         as="a"
