@@ -22,23 +22,29 @@ export function XMLUploadButton() {
       return;
     }
 
-    const files = e.target.files?.[0];
+    const file = e.target.files?.[0];
 
-    if (files?.name.split(".").pop() !== "xml") {
+    if (file?.name.split(".").pop() !== "xml") {
       return toast.error("Formato errado.");
     }
 
-    if (files?.size > 10000000) {
+    if (file?.size > 10000000) {
       return toast.error("Tamanho máximo excedido (10MB).");
     }
 
-    setFileName(files?.name);
+    setFileName(file?.name);
 
     const formData = new FormData();
-    formData.append("arquivo", files, "curriculo.xml");
-    const { data } = await api.post("/parser", files);
+    formData.append("arquivo", file, "curriculo.xml");
+    try {
+      const { data } = await api.post("/parser", file);
 
-    console.log(data);
+      console.log(data);
+    }
+    catch (err) {
+      console.log(err);
+    }
+
 
     return toast.success("Arquivo adicionado.");
   };
