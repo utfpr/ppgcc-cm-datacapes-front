@@ -42,7 +42,6 @@
     "git-cz": "^4.8.0",
     "jest": "^27.5.1",
     "faker": "^4.1.0",
-    "miragejs": "^0.1.43",
     "@types/uuid": "^8.3.4",
     "@types/faker": "^5.5.9",
     "jest-dom": "^4.0.0",
