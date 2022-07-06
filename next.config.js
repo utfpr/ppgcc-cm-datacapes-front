@@ -14,4 +14,7 @@ module.exports = {
       },
     ];
   },
+  env: {
+    api_address: process.env.API_ADDRESS
+  }
 };
